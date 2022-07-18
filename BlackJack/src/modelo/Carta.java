@@ -9,7 +9,7 @@ public class Carta {
 	private Palo palo;
 	
 	public Carta(int num, Palo palo) {
-		if (num>1 && num<13) {
+		if (num>=1 && num<=13) {
 			this.num = num;
 			this.palo = palo;
 		}
@@ -26,7 +26,7 @@ public class Carta {
 	
 	public int getValor() {
 		if (this.num==1) return 11;
-		else if (this.num==11 || this.num==12 || this.num==13) return 10;
+		else if (this.num>10) return 10;
 		else return this.num;		
 	}
 	
@@ -41,7 +41,7 @@ public class Carta {
 
 	@Override
 	public String toString() {
-		return "["+ num + " - " + palo + "]";
+		return "["+ this.mostrarNum() + " - " + this.palo + "]";
 	}
 	
 	
